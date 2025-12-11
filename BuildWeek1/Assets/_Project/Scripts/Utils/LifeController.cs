@@ -5,10 +5,13 @@ public class LifeController : MonoBehaviour
     [SerializeField] private int maxHp = 100;
     [SerializeField] private int hp = 100;
     private PlayerAnimationHandler _animController;
+    private EnemiesAnimationHandler _enemyController;
 
     void Start()
     {
-        _animController = GetComponent<PlayerAnimationHandler>();
+        _animController = GetComponentInChildren<PlayerAnimationHandler>();
+        _enemyController = GetComponent<EnemiesAnimationHandler>();
+        
     }
 
     public int GetHp() => hp;
@@ -46,10 +49,12 @@ public class LifeController : MonoBehaviour
         if (IsAlive())
         {
             _animController.PlayDamageAnimation();
+            _enemyController.PlayDamageAnimation();
         }
         else
         {
             _animController.DeathAnimation();
+            _enemyController.DeathAnimation();
         }
     }
 

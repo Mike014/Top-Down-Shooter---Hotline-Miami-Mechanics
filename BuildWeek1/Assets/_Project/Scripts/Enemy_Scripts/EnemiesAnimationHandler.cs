@@ -42,7 +42,7 @@ public class EnemiesAnimationHandler : MonoBehaviour
         _animator.SetBool("isDamaged", false);
     }
 
-    public void AnimationDeath()
+    public void DeathAnimation()
     {
         _animator.SetBool("isDead", true);
         gameObject.SetActive(false);
