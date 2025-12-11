@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8394529933534143336, guid: 42f5159a62d10304c89db3c37a1ef4c5, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8680446475417190318, guid: 42f5159a62d10304c89db3c37a1ef4c5, type: 3}
       propertyPath: m_GravityScale
       value: 0
@@ -136,4 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e79b07f52233941b8cbb666663454b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Checkpoint: []
+  damage: 0
+  checkpoints: []
+  distanceSensibility: 0.1
