@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -19,10 +17,11 @@ public class Bullet : MonoBehaviour
             _rb.gravityScale = 0f;
         }
     }
-    public void SetUp(Vector2 direction)
+    public void SetUp(Vector2 direction, int damage)
     // Diciamo al proiettile in quale direzione andare
     {
         _rb.velocity = direction.normalized * _speed;
+        _damage = damage; // Imposta il danno direttamente
     }
     private void OnCollisionEnter2D (Collision2D collision)
     {

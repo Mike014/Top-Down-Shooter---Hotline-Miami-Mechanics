@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Player
   - Background
-  - 
+  - Bullet
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Bullets
+    uniqueID: 1744190821
     locked: 0
   - name: Player
     uniqueID: 1959455225
