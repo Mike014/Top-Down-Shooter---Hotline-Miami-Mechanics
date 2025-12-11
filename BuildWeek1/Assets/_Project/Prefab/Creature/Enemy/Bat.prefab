@@ -56,18 +56,23 @@ PrefabInstance:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8680446475417190318, guid: 42f5159a62d10304c89db3c37a1ef4c5, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680446475417190318, guid: 42f5159a62d10304c89db3c37a1ef4c5, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3067306370722687207, guid: 42f5159a62d10304c89db3c37a1ef4c5, type: 3}
-      insertIndex: -1
+      insertIndex: 1
       addedObject: {fileID: 721254299959793326}
     - targetCorrespondingSourceObject: {fileID: 3067306370722687207, guid: 42f5159a62d10304c89db3c37a1ef4c5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8125090652019303152}
-    - targetCorrespondingSourceObject: {fileID: 3067306370722687207, guid: 42f5159a62d10304c89db3c37a1ef4c5, type: 3}
-      insertIndex: -1
+      insertIndex: 4
       addedObject: {fileID: 4443507042710515812}
   m_SourcePrefab: {fileID: 100100000, guid: 42f5159a62d10304c89db3c37a1ef4c5, type: 3}
 --- !u!1 &715737305190380028 stripped
@@ -127,41 +132,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &8125090652019303152
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715737305190380028}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0035431087, y: 0.083854795}
-  m_Size: {x: 0.6480461, y: 0.6480461}
-  m_Direction: 0
 --- !u!114 &4443507042710515812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,3 +146,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   player: {fileID: 0}
+  batDmg: 1
