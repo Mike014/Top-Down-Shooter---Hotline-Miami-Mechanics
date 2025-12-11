@@ -58,14 +58,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8157886368356933455, guid: 8d5d33012afc37f43a5eacc78962578c, type: 3}
       insertIndex: 3
-      addedObject: {fileID: -5221722783381669420}
+      addedObject: {fileID: 1689250867762712}
   m_SourcePrefab: {fileID: 100100000, guid: 8d5d33012afc37f43a5eacc78962578c, type: 3}
 --- !u!1 &3067306370722687207 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8157886368356933455, guid: 8d5d33012afc37f43a5eacc78962578c, type: 3}
   m_PrefabInstance: {fileID: 6604494259386939304}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-5221722783381669420
+--- !u!114 &1689250867762712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +74,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3067306370722687207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b73c863ab0618b4a87483c4a04ccb58, type: 3}
+  m_Script: {fileID: 11500000, guid: 366d248ffef8cd44ca00f124d69a3577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  weapon: {fileID: 0}
+  dropChance: 10

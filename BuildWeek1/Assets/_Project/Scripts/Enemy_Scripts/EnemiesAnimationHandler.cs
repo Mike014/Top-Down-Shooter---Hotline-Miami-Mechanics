@@ -1,7 +1,8 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimationHandler : MonoBehaviour
+public class EnemiesAnimationHandler : MonoBehaviour
 {
     [SerializeField] private string _verticalSpeedName = "vSpeed";
     [SerializeField] private string _horizontalSpeedName = "hSpeed";
@@ -41,9 +42,10 @@ public class PlayerAnimationHandler : MonoBehaviour
         _animator.SetBool("isDamaged", false);
     }
 
-    public void DeathAnimation()
+    public void AnimationDeath()
     {
         _animator.SetBool("isDead", true);
         gameObject.SetActive(false);
     }
+
 }
