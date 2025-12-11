@@ -3,7 +3,8 @@ using UnityEngine;
 public class PhantomMover : MonoBehaviour
 {
     [SerializeField] private float speed = 1f;
-    [SerializeField] private float timer = 2f;
+    private float timer = 2f;
+    private TopDownMover2D mover;
     private EnemyDrop drop;
     private EnemyLifeController life;
     Vector3 dir;
@@ -11,6 +12,7 @@ public class PhantomMover : MonoBehaviour
     private void Awake()
     {
         life = GetComponent<EnemyLifeController>();
+        mover = GetComponent<TopDownMover2D>();
     }
 
     private void PhantomMovement()                                                  //mover del ghost
