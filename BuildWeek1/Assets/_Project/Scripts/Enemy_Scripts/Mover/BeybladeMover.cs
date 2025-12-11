@@ -4,6 +4,7 @@ public class BeybladeMover : MonoBehaviour
 {
     [SerializeField] private int damage;
     [SerializeField] private GameObject[] checkpoints;
+    //[SerializeField] private float distanceSensibility = 0.1f;
     private TopDownMover2D mover;
     private EnemyDrop drop;
     private LifeController life;
@@ -19,7 +20,15 @@ public class BeybladeMover : MonoBehaviour
 
     private void Update()
     {
-        direction = checkpoints[index].transform.position - transform.position;
-        mover.SetInputNormalized(direction);
+        float distance = Vector2.Distance(transform.position, checkpoints[index].transform.position);   //calcola la distanza tra la posizione dell'enemy e quella del checkpoint
+
+        if (distance <= 0.1f)
+        {
+            index++;                                     //passa al prossimo checkpoint
+            if (index >= checkpoints.Length) index = 0;  //quando raggiunge l'ultimo waypoint resetta, così da garantire un loop di movimento
+        }
+                                                     
+        direction = checkpoints[index].transform.position - transform.position;                         //calcola la direzione ad ogni checkpoint
+        mover.SetInputNormalized(direction);                                                            //lo passa a TopDownMover2D e normalizza
     }
 }
