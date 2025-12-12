@@ -13,14 +13,11 @@ public class BeybladeMover : MonoBehaviour
     private int index;
     private float damageTimer = 0f;
 
-    private EnemiesAnimationHandler _enemyController;
-
     private void Awake()
     {
         drop = GetComponent<EnemyDrop>();
         life = GetComponent<LifeController>();
         mover = GetComponent<TopDownMover2D>();
-        _enemyController = GetComponentInChildren<EnemiesAnimationHandler>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
