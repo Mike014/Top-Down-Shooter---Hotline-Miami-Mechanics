@@ -59,7 +59,11 @@ public class LifeController : MonoBehaviour
 
     public bool IsAlive()
     {
-        return !_isDead;
+        if (hp <= 0)
+        {
+            return false;
+        }
+        else { return true; }
     }
 
     public void Die() // DOMENICO: Funzione aggiunta perch� mi dava errori di despawn e di animazione non calcolata
