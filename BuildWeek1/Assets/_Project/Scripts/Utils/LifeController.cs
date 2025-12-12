@@ -42,12 +42,13 @@ public class LifeController : MonoBehaviour
         Debug.Log($"HP aumentati di {heal}! Vita attuale: {hp}");
     }
 
+
     public void TakeDamage(int damage)
     {
         SetHp(hp - damage);
         Debug.Log($"Danno subito: {damage}. Vita attuale: {hp}");
 
-        if (IsAlive())
+        if (hp <= 0)
         {
             _animController?.PlayDamageAnimation();
         }
