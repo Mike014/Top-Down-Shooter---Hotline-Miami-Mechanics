@@ -4,7 +4,7 @@ public class PlayerWeaponList : MonoBehaviour
 {
     [SerializeField] private WeaponManager weaponManager;
 
-    public void CollectWeapon(Weapon weaponPrefab) // Chiamato quando il player raccoglie un'arma
+    public void CollectWeapon(Weapon weaponPrefab) //chiamato quando il player raccoglie un'arma
     {
         if (weaponPrefab == null) return;
 
