@@ -4,11 +4,11 @@ public class PlayerFootsteps : MonoBehaviour
 {
     [Header("Audio")]
     public AudioSource audioSource;       // L’AudioSource del player
-    public AudioClip footstepClip;        // Il tuo Footsteps.wav
+    public AudioClip footstepClip;        
 
     [Header("Step Settings")]
-    public float stepInterval = 0.35f;    // Quanto tempo tra un passo e l'altro
-    public float pitchRandomness = 0.1f;  // Varietà nel suono
+    public float stepInterval = 0.35f;    //intervallo tra i passi
+    public float pitchRandomness = 0.1f;  //suono casuale
 
     private TopDownMover2D mover;
     private float stepTimer;
@@ -20,10 +20,7 @@ public class PlayerFootsteps : MonoBehaviour
 
     // void Update()
     // {
-    //     Vector2 velocity = mover.GetVelocity();   // SE mover ha un metodo per la velocità
-
-    //     // Se ti serve, puoi usare mover.Input invece della velocità
-    
+    //     Vector2 velocity = mover.GetVelocity();
     //     if (velocity.magnitude > 0.1f)
     //     {
     //         stepTimer -= Time.deltaTime;
