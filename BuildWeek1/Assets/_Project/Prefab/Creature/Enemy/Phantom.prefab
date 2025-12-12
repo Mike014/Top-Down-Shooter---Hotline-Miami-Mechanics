@@ -111,6 +111,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.14
       objectReference: {fileID: 0}
+    - target: {fileID: 1094636671296648948, guid: 42f5159a62d10304c89db3c37a1ef4c5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3067306370722687207, guid: 42f5159a62d10304c89db3c37a1ef4c5, type: 3}
       propertyPath: m_Name
       value: Phantom
@@ -213,5 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366d248ffef8cd44ca00f124d69a3577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 3984011973607135307, guid: 0f77c667569e69c42955be19299b7864, type: 3}
+  weapons:
+  - {fileID: 1982183149371461867, guid: 7218410bbf83d24458203b56b9eba77d, type: 3}
+  - {fileID: 8884411295168340077, guid: 4ebb7b1a171366b4eb68df2937f9aae8, type: 3}
+  - {fileID: 6740061188834915426, guid: 38d6becd3b8ba334fbe40af84fcc93ae, type: 3}
+  - {fileID: 4191887247238685021, guid: 233045ac91bd9a849889ccdb71c27b17, type: 3}
   dropChance: 10

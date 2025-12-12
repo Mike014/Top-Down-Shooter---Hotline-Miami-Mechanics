@@ -2,34 +2,28 @@ using UnityEngine;
 
 public class EnemyDrop : MonoBehaviour
 {
-    [SerializeField] private GameObject weapon;
-    [SerializeField] private int dropChance = 10;
+    [SerializeField] private GameObject[] weapons;   //array di armi possibili
+    [SerializeField] private int dropChance = 10;    //probabilità di droppare
 
     private void Awake()
     {
-        if (weapon == null)
-        {
+        if (weapons == null || weapons.Length == 0)
             Debug.LogWarning($"Nessuna arma assegnata al drop di {gameObject.name}");
-        }
     }
+
     private bool HasDropped()
     {
-        int random = Random.Range(0, 100);
-        if (random < dropChance)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return Random.Range(0, 100) < dropChance;
     }
-    
-    public void TryDrop()       //da checkare se bisogna impostare un delay per la fine dell'animazione di morte
+
+    public void TryDrop()
     {
-        if (HasDropped())
+        if (HasDropped() && weapons.Length > 0)
         {
-            Instantiate(weapon, transform.position, Quaternion.identity); 
+            int index = Random.Range(0, weapons.Length);       // sceglie un'arma casuale
+            GameObject weaponToDrop = weapons[index];
+
+            Instantiate(weaponToDrop, transform.position, Quaternion.identity);
         }
     }
 }
