@@ -10,7 +10,7 @@ public class EnemiesAnimationHandler : MonoBehaviour
 
     void Awake()
     {
-        _animator = GetComponentInChildren<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     private void SetVerticalSpeed(float speed)
@@ -45,7 +45,10 @@ public class EnemiesAnimationHandler : MonoBehaviour
     public void DeathAnimation()
     {
         _animator.SetBool("isDead", true);
-        gameObject.SetActive(false);
     }
 
+    public void DeathAnimationEnd()
+    {
+        Destroy(gameObject);
+    }
 }

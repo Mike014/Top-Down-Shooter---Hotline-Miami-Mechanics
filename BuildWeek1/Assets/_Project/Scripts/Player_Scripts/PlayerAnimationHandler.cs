@@ -44,6 +44,10 @@ public class PlayerAnimationHandler : MonoBehaviour
     public void DeathAnimation()
     {
         _animator.SetBool("isDead", true);
-        gameObject.SetActive(false);
+    }
+
+    public void DeathAnimationEnd()
+    {
+        Destroy(gameObject);
     }
 }

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7019204338490733386}
   - component: {fileID: 4252038571809856998}
+  - component: {fileID: 2855802219728452671}
+  - component: {fileID: 8964912009257146629}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -84,6 +86,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2855802219728452671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492206325356876369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5943402afd7f43b0aee6fc8ea871b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _verticalSpeedName: vSpeed
+  _horizontalSpeedName: hSpeed
+--- !u!95 &8964912009257146629
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492206325356876369}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 242cf71c27e6540e49f3da9de09370fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2557918891303622939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -188,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684035c1b59b1474680e3bde4d77430e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  mover: {fileID: 0}
   player: {fileID: 0}
   batDmg: 1
 --- !u!4 &5711153811601117927 stripped

@@ -39,7 +39,7 @@ public class BatMover : MonoBehaviour
             }
         }
 
-        if (player != null) 
+        if (player != null)
         {
             playerTransform = player.transform;
         }
@@ -52,7 +52,7 @@ public class BatMover : MonoBehaviour
             Vector2 direction = (playerTransform.position - transform.position);
             mover.SetInputNormalized(direction);
             _enemyController.MovementAnimation(direction);
-            
+
         }
     }
 
@@ -63,6 +63,7 @@ public class BatMover : MonoBehaviour
             LifeController life = collision.gameObject.GetComponent<LifeController>();
             if (life != null)
             {
+                _enemyController.DeathAnimation();
                 life.TakeDamage(batDmg);
             }
 
@@ -72,7 +73,7 @@ public class BatMover : MonoBehaviour
             }
 
             //<------                 animazione di esplosione del bat
-            Destroy(gameObject);    //non so se serve delay
+            // Destroy(gameObject);    //non so se serve delay -> Destroy è già dentro l'evento di fine animazione
         }
     }
 
