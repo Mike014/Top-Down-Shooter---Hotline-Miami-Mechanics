@@ -26,7 +26,7 @@ public class BatMover : MonoBehaviour
 
     private void Start()
     {
-        if (player == null)         // associa il target verso cui il Bat si diriger�
+        if (player == null)         // associa il target verso cui il Bat si dirigere
         {
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
             if (playerObj != null)
@@ -50,7 +50,7 @@ public class BatMover : MonoBehaviour
         }
     }
 
-    private void EnemyMovement()        //sistema di movimento per cui il bat seguir� il player
+    private void EnemyMovement()        //sistema di movimento per cui il bat seguire il player
     {
         if (player != null)
         {
@@ -62,6 +62,9 @@ public class BatMover : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) //oncollision fa batDmg, prova a droppare e si distrugge. nota: invertire droppare e distrugge pu� causare problemi?
     {
+        // MG: Se già morto, ignora qualsiasi collisione
+        if (isDead) return;
+
         if (collision.gameObject.CompareTag("Player"))
         {
             LifeController playerLife = collision.gameObject.GetComponent<LifeController>();
@@ -69,6 +72,10 @@ public class BatMover : MonoBehaviour
             {
                 playerLife.TakeDamage(batDmg);
             }
+
+            // MG: Imposta il flag, è MORTO
+            isDead = true;
+
             mover.enabled = false;
             _enemyController.DeathAnimation();
 
@@ -84,10 +91,16 @@ public class BatMover : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // MG: Se già morto, non viene triggerato
+        if (isDead) return;
+
         if (collision.gameObject.CompareTag("Bullet"))
         {
             if (!life.IsAlive())
             {
+                // MG: Imposta il flag
+                isDead = true;
+
                 _enemyController.DeathAnimation();
                 if (drop != null)
                     drop.TryDrop();
@@ -104,6 +117,9 @@ public class BatMover : MonoBehaviour
 
     private void Update()
     {
+        // MG: Blocca movimento se morto
+        if (isDead) return;
+
         EnemyMovement();
     }
 }
