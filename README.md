@@ -15,4 +15,3 @@ Project derived from: [team-ozzico](https://github.com/Mike014/team-ozzico)
 
 ---
 
->>>>>>> 60d4fd6d9e35e066c2bceec1c7042208aefaed30
