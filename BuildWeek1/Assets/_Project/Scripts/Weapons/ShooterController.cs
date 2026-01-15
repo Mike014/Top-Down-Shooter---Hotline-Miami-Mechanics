@@ -24,23 +24,18 @@ public class ShooterController : MonoBehaviour
 
     private void Update()
     {
-        // MG: Sparo a Click Singolo
         if (weaponManager == null) return;
 
         weaponManager.RemoveDestroyedWeapons();
 
-        // MG: Sparo a Click Singolo
-        if (Input.GetMouseButtonDown(0))
+        // Chiamata a Shoot per tutte le armi ogni frame, lasciando che la singola arma gestisca il fireRate
+        foreach (Weapon weapon in weaponManager.GetAllWeapons())
         {
-            // Chiamata a Shoot per tutte le armi ogni frame, lasciando che la singola arma gestisca il fireRate
-            foreach (Weapon weapon in weaponManager.GetAllWeapons())
-            {
-                if (weapon == null) continue;
+            if (weapon == null) continue;
 
-                Vector2[] directions = GetWeaponDirections(weapon);
+            Vector2[] directions = GetWeaponDirections(weapon);
 
-                weapon.ShootAllDirections(directions, bulletSpawnPoint.position); // fireRate rispettato internamente
-            }
+            weapon.ShootAllDirections(directions, bulletSpawnPoint.position); // fireRate rispettato internamente
         }
     }
 
