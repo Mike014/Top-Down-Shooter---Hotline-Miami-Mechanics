@@ -1,15 +1,48 @@
-
 using UnityEngine;
 
 public class PlayerAnimationHandler : MonoBehaviour
 {
     [SerializeField] private string _verticalSpeedName = "vSpeed";
     [SerializeField] private string _horizontalSpeedName = "hSpeed";
+
+    [Header("Mouse Rotation")]
+    [SerializeField] private bool rotateTowardMouse = true;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
     private Animator _animator;
+    private Camera mainCam;
 
     void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
+
+        if(spriteRenderer == null)
+           spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        mainCam = Camera.main;
+    }
+
+    void Update()
+    {
+        if (rotateTowardMouse)
+        {
+            rotateTowardsMouse();
+        }
+    }
+
+    private void rotateTowardsMouse()
+    {
+        if (mainCam == null) return;
+
+        Vector3 mouseWorld = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = (mouseWorld - transform.position).normalized;
+
+        if (direction.sqrMagnitude > 0.001f)
+        {
+            // Rotazione a 360 gradi su asse Y verso il mouse
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, angle, 0);
+        }
     }
 
     private void SetVerticalSpeed(float speed)
